@@ -178,6 +178,10 @@ function handleCommand(cmd) {
         case "whoami":
             output.textContent = "dhruvesh tripathi";
             break;
+        case "ls projects":
+            output.textContent =
+                "QuietPixel  CipherX  ShadowHash  PixelPhantomX  SecureKeyGen";
+            break;  
         case "id":
             output.textContent = "uid=1000(dhruvesh) gid=1000(cyber)\ngroups=1000(cyber),27(sudo)";
             break;
@@ -187,19 +191,59 @@ function handleCommand(cmd) {
         case 'echo "Welcome to my portfolio 🚀"':
             output.textContent = "Welcome to my portfolio 🚀";
             break;
+        case "cat certifications.txt":
+            output.textContent =
+                "CEH v13 (AI)\n" +
+                "Certified in Cybersecurity – (ISC)²\n" +
+                "Oracle OCI GenAI Professional\n" +
+                "Oracle OCI DevOps Professional\n" +
+                "CCNA – Cisco\n" +
+                "CRPO – Ransomware Protection Officer";
+            break;
         case "ls -la projects":
             output.textContent =
                 "drwxr-xr-x  6 dhruvesh staff   192 Sep 2025 .\n" +
                 "drwxr-xr-x  1 dhruvesh staff  1024 Sep 2025 ..\n" +
                 "-rw-r--r--  1 dhruvesh staff  1024 Sep 2025 ShadowHash\n" +
+                "drwxr-xr-x  1 dhruvesh staff  1024 Sep 2025 CipherX\n" +
+                "drwxr-xr-x  1 dhruvesh staff  1024 Sep 2025 QuietPixel\n" +
+                "drwxr-xr-x  1 dhruvesh staff  1024 Sep 2025 AWS-ScriptingEngine\n"+
                 "-rw-r--r--  1 dhruvesh staff   512 Sep 2025 SecureKeyGen";
+            break;
+        case "status":
+            output.textContent =
+                "Open to roles:\n" +
+                "- Cybersecurity Engineer\n" +
+                "- Cybersecurity Consultant\n" +
+                "- VAPT Specialist\n" +
+                "- DevSecOps / Cloud Security";
+            break;
+        case "neofetch":
+            output.textContent =
+                "OS: PortfolioOS 1.0\n" +
+                "Host: dhruvesh-tripathi.dev\n" +
+                "Kernel: CyberSec 5.2\n" +
+                "Shell: zsh\n" +
+                "Role: Cybersecurity Engineer\n" +
+                "Focus: VAPT | Cloud Security | Cryptography";
             break;
         case "clear":
             terminal.innerHTML = "";
             newPrompt();
             return;
         case "help":
-            output.textContent = "Commands: whoami, id, uname -a, echo, ls -la projects, clear, help";
+            output.textContent =
+                "Available commands:\n" +
+                "neofetch\n" +
+                "whoami\n" +
+                "id\n" +
+                "uname -a\n" +
+                "ls projects\n" +
+                "ls -la projects\n" +
+                "cat certifications.txt\n" +
+                "status\n" +
+                "clear\n" +
+                "help";
             break;
         default:
             output.textContent = `zsh: command not found: ${cmd}`;
