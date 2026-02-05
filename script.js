@@ -241,4 +241,5 @@ terminal.addEventListener("keydown", (e) => {
             histIndex = history.length;
         }
     }
+    
 });
